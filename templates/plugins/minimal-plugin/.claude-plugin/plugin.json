@@ -1,0 +1,8 @@
+{
+  "name": "minimal-plugin",
+  "description": "A minimal plugin template with essential structure",
+  "version": "1.0.0",
+  "author": {
+    "name": "Your Name"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "comment": "Example: Log all file edits for audit trail",
+            "command": "FILE=$(jq -r '.parameters.file_path'); echo \"[$(date '+%Y-%m-%d %H:%M:%S')] Edited: $FILE\" >> /tmp/claude-edits.log"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "comment": "Example: Log session start time",
+            "command": "echo \"Session started at $(date)\" >> /tmp/claude-sessions.log"
+          }
+        ]
+      }
+    ]
+  }
+}

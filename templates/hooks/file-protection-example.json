@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "comment": "Block edits to protected files (.env, lock files, etc.)",
+            "command": "FILE=$(jq -r '.parameters.file_path'); case $FILE in *.lock|.env|.env.*|*secrets*) echo \"Error: Cannot edit protected file: $FILE\" >&2 && exit 1;; esac"
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "comment": "Block writing to protected files",
+            "command": "FILE=$(jq -r '.parameters.file_path'); case $FILE in *.lock|.env|.env.*|*secrets*) echo \"Error: Cannot write protected file: $FILE\" >&2 && exit 1;; esac"
+          }
+        ]
+      }
+    ]
+  }
+}

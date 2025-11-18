@@ -1,0 +1,8 @@
+{
+  "name": "claude-builder",
+  "description": "Meta-development toolkit for creating Skills, Subagents, Hooks, Commands, and Plugins. Accelerates Claude Code extensibility development with intelligent generators and templates.",
+  "version": "1.0.0",
+  "author": {
+    "name": "sbeardsley"
+  }
+}

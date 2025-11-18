@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE=$(jq -r '.parameters.file_path'); case $FILE in *.ts|*.tsx|*.js|*.jsx) prettier --write \"$FILE\" 2>/dev/null || true;; *.py) black \"$FILE\" 2>/dev/null || true;; *.go) gofmt -w \"$FILE\" 2>/dev/null || true;; esac"
+          }
+        ]
+      }
+    ]
+  }
+}
