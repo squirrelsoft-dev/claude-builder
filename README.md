@@ -82,6 +82,12 @@ Pre-built templates for common patterns:
 
 ## Installation
 
+```
+/plugin marketplace add squirrelsoft-dev/squirrelsoft-marketplace
+/plugin install claude-builder@squirrelsoft-dev
+```
+
+
 ### From Local Directory
 
 ```bash
